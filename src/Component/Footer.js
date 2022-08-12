@@ -10,7 +10,7 @@ import {
   Text,
 } from '@chakra-ui/react'
 import * as React from 'react'
-import { FaFacebook, FaGithub, FaLinkedin, FaMailBulk, FaMailchimp, FaTwitter, FaWhatsapp, FaYoutube } from 'react-icons/fa'
+import { FaFacebook, FaWhatsapp, FaYoutube } from 'react-icons/fa'
 import Logo from './logos.svg'
 
 export const Footer = () => {

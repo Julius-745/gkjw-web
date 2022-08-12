@@ -14,13 +14,14 @@ import {
 import Banner  from './Component/Majelis.svg';
 import { Header } from './Component/Header';
 import { Footer } from './Component/Footer';
+import { CardSection } from './Component/CardSection';
 
 function App() {
   return (
     <ChakraProvider>
       <Box>
         <Header />
-        <Image src={Banner}/>
+        <CardSection/>
         <Footer />
       </Box>
     </ChakraProvider>
