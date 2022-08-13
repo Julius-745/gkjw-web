@@ -5,35 +5,43 @@ import PropTypes from "prop-types";
 
 export const CardKrw = ({title, date, krw, person1}) => {
     return(
-        <Container border={'1px'} borderColor={'gray.200'} padding={5} borderRadius={4} w={'calc(100% / 3)'}> 
+        <Container border={'1px'} borderColor={'gray.200'} padding={5} borderRadius={4} w={'calc(100% / 3)'} justifyItems={'center'}> 
             <Text fontSize={'3xl'} fontWeight="bold">
                 {title}
             </Text>
             <Text fontSize={'2xl'} fontWeight="bold">
                 {date} 
             </Text>
-            <Flex fontSize={'xl'} paddingTop={25} flexDirection={'column'}>
-                <Box display={'flex'} flexDirection={'row'}>
+            <Flex fontSize={'xl'} paddingTop={15} flexDirection={'column'} fontWeight={'bold'}>
+                <Box display={'flex'} flexDirection={'row'} paddingLeft={35}>
                     <Text>
                         {krw}
                     </Text>
-                    <Text paddingLeft={15}>
+                    <Text paddingLeft={35}>
                         {person1}
                     </Text>
                 </Box>
-                <Box display={'flex'} flexDirection={'row'} paddingTop={5}>
+                <Box display={'flex'} flexDirection={'row'} marginTop={2} paddingLeft={35}>
                     <Text>
                         {krw}
                     </Text>
-                    <Text paddingLeft={15}>
+                    <Text paddingLeft={35}>
                         {person1}
                     </Text>
                 </Box>
-                <Box display={'flex'} flexDirection={'row'} paddingTop={5}>
+                <Box display={'flex'} flexDirection={'row'} marginTop={2} paddingLeft={35}>
                     <Text>
                         {krw}
                     </Text>
-                    <Text paddingLeft={15}>
+                    <Text paddingLeft={35}>
+                        {person1}
+                    </Text>
+                </Box>
+                <Box display={'flex'} flexDirection={'row'} marginTop={2} paddingLeft={35}>
+                    <Text>
+                        {krw}
+                    </Text>
+                    <Text paddingLeft={35}>
                         {person1}
                     </Text>
                 </Box>
