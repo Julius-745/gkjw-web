@@ -22,6 +22,7 @@ export const CardIbadahLalu = () => {
 
     return(
         <HStack padding={16}>
+            
             {ibadah.data?.map(ibadah => (
                 <CardLalu 
                     title={ibadah.attributes?.Title}

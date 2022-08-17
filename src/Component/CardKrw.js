@@ -4,13 +4,14 @@ import { FaUserAlt } from "react-icons/fa";
 import PropTypes from "prop-types";
 
 export const CardKrw = ({title, date, krw, person1}) => {
+    var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
     return(
         <Container border={'1px'} borderColor={'gray.200'} padding={5} borderRadius={4} w={'calc(100% / 3)'} justifyItems={'center'}> 
             <Text fontSize={'3xl'} fontWeight="bold">
                 {title}
             </Text>
             <Text fontSize={'2xl'} fontWeight="bold">
-                {date} 
+                {new Date(date).toLocaleDateString("id-ID", options)} 
             </Text>
             <Flex fontSize={'xl'} paddingTop={15} flexDirection={'column'} fontWeight={'bold'}>
                 <Box display={'flex'} flexDirection={'row'} paddingLeft={35}>

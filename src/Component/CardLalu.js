@@ -2,15 +2,17 @@ import React from "react";
 import { Text, Button, Container, Box, Flex} from "@chakra-ui/react";
 import { FaUserAlt, FaWallet } from "react-icons/fa";
 import PropTypes from "prop-types";
+import NumberFormat from "react-number-format";
 
 export const CardLalu = ({title, date, persons1, persons2, persons3, fund, fund1, fund2}) => {
+    var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
     return (
         <Container border={'1px'} borderColor={'gray.200'} padding={5} borderRadius={4} w={'calc(100% / 3)'}> 
             <Text fontSize={'3xl'} fontWeight="bold">
                 {title}
             </Text>
             <Text fontSize={'2xl'} fontWeight="bold">
-                {date}
+                {new Date(date).toLocaleDateString("id-ID", options)}
             </Text>
             <Flex fontSize={'xl'} paddingTop={25} flexDirection={'column'}>
                 <Flex flexDirection={'row'} justifyContent={'flex-start'}>
@@ -30,19 +32,19 @@ export const CardLalu = ({title, date, persons1, persons2, persons3, fund, fund1
                 <Flex display={'flex'} flexDirection={'row'} paddingTop={5}>
                     <FaWallet/>
                     <Text paddingLeft={15}>
-                        {fund}
+                        <NumberFormat value={fund} displayType={'text'} thousandSeparator={true} prefix={'Rp '} />
                     </Text>
                 </Flex>
                 <Flex display={'flex'} flexDirection={'row'} paddingTop={5}>
                     <FaWallet/>
                     <Text paddingLeft={15}>
-                        {fund1}
+                    <NumberFormat value={fund1} displayType={'text'} thousandSeparator={true} prefix={'Rp '} />
                     </Text>
                 </Flex>
                 <Flex display={'flex'} flexDirection={'row'} paddingTop={5}>
                     <FaWallet/>
                     <Text paddingLeft={15}>
-                        {fund2}
+                    <NumberFormat value={fund2} displayType={'text'} thousandSeparator={true} prefix={'Rp '} />
                     </Text>
                 </Flex>
             </Flex>
