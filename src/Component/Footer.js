@@ -8,6 +8,7 @@ import {
   Stack,
   Image,
   Text,
+  useColorModeValue,
 } from '@chakra-ui/react'
 import * as React from 'react'
 import { FaFacebook, FaWhatsapp, FaYoutube } from 'react-icons/fa'
