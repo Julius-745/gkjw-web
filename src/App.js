@@ -15,15 +15,12 @@ import { Banner }  from './Component/Banner';
 import { Header } from './Component/Header';
 import { Footer } from './Component/Footer';
 import { CardSection } from './Component/CardSection';
-import {Carousel} from './Component/Carousel'
 
 function App() {
   return (
     <ChakraProvider>
       <Box>
         <Header />
-        <Banner />
-        <Carousel />
         <CardSection/>
         <Footer />
       </Box>
