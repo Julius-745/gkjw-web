@@ -14,6 +14,8 @@ import {
 import { Banner }  from './Component/Banner';
 import { Header } from './Component/Header';
 import { Footer } from './Component/Footer';
+import { CardSection } from './Component/CardSection';
+import { Carousel } from './Component/Carousel';
 import { CardJadwalSection } from './Component/CardJadwalSection';
 import { CardIbadahLalu } from './Component/CardIbadahLalu';
 
@@ -22,7 +24,8 @@ function App() {
     <ChakraProvider>
       <Box>
         <Header />
-        <CardJadwalSection/>
+        <CardJadwalSection />
+        <Carousel />
         <CardIbadahLalu/>
         <Footer />
       </Box>
