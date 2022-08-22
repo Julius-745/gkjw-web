@@ -18,6 +18,7 @@ import { CardSection } from './Component/CardSection';
 import { Carousel } from './Component/Carousel';
 import { CardJadwalSection } from './Component/CardJadwalSection';
 import { CardIbadahLalu } from './Component/CardIbadahLalu';
+import { CardSkeleton } from "./Component/CardSkeleton";
 
 function App() {
   return (

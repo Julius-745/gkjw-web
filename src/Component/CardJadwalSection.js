@@ -3,6 +3,7 @@ import axios from "axios";
 import { Container, HStack, Stack} from "@chakra-ui/react";
 import { CardIbadah } from "./CardIbadah";
 import { CardKrw } from "./CardKrw";
+import { CardSkeleton } from "./CardSkeleton";
 
 export const CardJadwalSection = () => {
     const[error, setError] = useState(null);
@@ -21,14 +22,21 @@ export const CardJadwalSection = () => {
 
     console.log(listIbadah);
 
+    
     if(error) {
         return <div>An error occured: {error.message}</div>
     }
 
     return(
         <HStack padding={16}>
-            {ibadah.data?.map(ibadah => (
-                <CardIbadah 
+            {ibadah.data?.map(ibadah => {
+                return ibadah.isLoading ? (
+                    <Container border={'1px'} borderColor={'gray.200'} padding={5} borderRadius={4} w={'calc(100% / 3)'}>
+                        <CardSkeleton />
+                    </Container>
+                ) : (
+                <Container border={'1px'} borderColor={'gray.200'} padding={5} borderRadius={4} w={'calc(100% / 3)'}>
+                    <CardIbadah 
                     key={ibadah.id}
                     title={ibadah.attributes?.Title}
                     date={ibadah.attributes?.date}
@@ -36,12 +44,16 @@ export const CardJadwalSection = () => {
                     person1={ibadah.attributes?.Pelayan1}
                     person2={ibadah.attributes?.Pelayan2}
                     persons={ibadah.attributes.SongLeader}/>
-            ))}
+                </Container>
+                )
+            })}
+            <Container border={'1px'} borderColor={'gray.200'} padding={5} borderRadius={4} w={'calc(100% / 3)'}>
             <CardKrw 
                 title={'Jadwal Ibadah KRW'}
                 date={'17 April 2022'}
                 krw={'Betlehem'}
                 person1={'Pdt. Patria Yusak'}/>
+            </Container>
         </HStack>
     )
 }
