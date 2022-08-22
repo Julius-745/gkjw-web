@@ -7,7 +7,7 @@ import NumberFormat from "react-number-format";
 export const CardLalu = ({title, date, persons1, persons2, persons3, fund, fund1, fund2}) => {
     var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
     return (
-        <Container border={'1px'} borderColor={'gray.200'} padding={5} borderRadius={4} w={'calc(100% / 3)'}> 
+            <Flex flexDirection={'column'} h={'500px'}>
             <Text fontSize={'3xl'} fontWeight="bold">
                 {title}
             </Text>
@@ -48,8 +48,10 @@ export const CardLalu = ({title, date, persons1, persons2, persons3, fund, fund1
                     </Text>
                 </Flex>
             </Flex>
-            <Button variant={'solid'} color={'white'} bgColor={'#3C64B1'} float={"right"} marginTop={10}>Detail</Button>
-        </Container>
+                <Box marginTop={'auto'}>
+                    <Button w={'115'} variant={'solid'} color={'white'} bgColor={'#3C64B1'} float={"right"}>Detail</Button>
+                </Box>
+            </Flex>
     )
 }
 

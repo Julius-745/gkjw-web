@@ -4,6 +4,7 @@ import { Container, HStack, Stack} from "@chakra-ui/react";
 import { CardIbadah } from "./CardIbadah";
 import { CardLalu } from "./CardLalu";
 import { CardKrw } from "./CardKrw";
+import { CardSkeleton } from "./CardSkeleton";
 
 export const CardIbadahLalu = () => {
     const[error, setError] = useState(null);
@@ -22,8 +23,13 @@ export const CardIbadahLalu = () => {
 
     return(
         <HStack padding={16}>
-            
-            {ibadah.data?.map(ibadah => (
+            {ibadah.data?.map(ibadah => {
+                return ibadah.isLoading ? (
+                    <Container border={'1px'} borderColor={'gray.200'} padding={5} borderRadius={4} w={'calc(100% / 3)'}>
+                        <CardSkeleton />
+                    </Container>
+                ) : (
+                    <Container border={'1px'} borderColor={'gray.200'} padding={5} borderRadius={4} w={'calc(100% / 3)'}>
                 <CardLalu 
                     title={ibadah.attributes?.Title}
                     date={ibadah.attributes?.date}
@@ -33,7 +39,10 @@ export const CardIbadahLalu = () => {
                     fund1={ibadah.attributes?.fund1}
                     fund2={ibadah.attributes?.fund2}
                     />
-            ))}
+                </Container>
+                )
+            })}
+            <Container border={'1px'} borderColor={'gray.200'} padding={5} borderRadius={4} w={'calc(100% / 3)'}>
             <CardLalu 
                 title={'Jadwal Ibadah Minggu'} 
                 date={'17 April 2022'}
@@ -43,6 +52,7 @@ export const CardIbadahLalu = () => {
                 fund1={10000000}
                 fund2={10000000}
                 />
+            </Container>
         </HStack>
     )
 }
