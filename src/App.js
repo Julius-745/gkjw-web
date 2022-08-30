@@ -25,6 +25,7 @@ function App() {
     <ChakraProvider>
       <Box>
         <Header />
+        <Banner/>
         <CardJadwalSection />
         <Carousel />
         <CardIbadahLalu/>

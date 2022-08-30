@@ -14,7 +14,7 @@ import {
   
   export const Header = () => {
     return (
-      <Box pb={{ base: '12', md: '' }} >
+      <Box pb={{ base: '1', md: '' }} >
         <Box boxShadow={useColorModeValue('md', 'md-dark')}>
           <Container maxW={"100%"} py={{ base: '5', lg: '5' }}>
             <Flex px={[2,3]}>
@@ -23,7 +23,7 @@ import {
               </Box>
               <Spacer />
               <Box>
-                <Button colorScheme='facebook'>Contact Person</Button>
+                <Button colorScheme='facebook' size={'lg'}>Contact Person</Button>
               </Box>
             </Flex>
           </Container>
