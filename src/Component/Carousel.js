@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from "react";
-import { Box, Flex, Text } from "@chakra-ui/react";
+import { Box, } from "@chakra-ui/react";
 import ImageSlider from "./ImageSlider";
-import { DataCarousel } from "./DataCarousel";
 import axios from "axios";
 
 export const Carousel = () => {
@@ -10,7 +9,7 @@ export const Carousel = () => {
 
   useEffect(() => {
       axios
-          .get("https://gkjwprob.domcloud.io/api/articles?populate=image")
+          .get("https://gkjwprob.domcloud.io/api/articles?populate=*")
           .then(res => setArticles(res.data))
           .catch(err => setError(err.message));
   } , []);

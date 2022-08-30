@@ -16,12 +16,6 @@ export const CardJadwalSection = () => {
             .catch(err => setError(err.message));
     } , []);
 
-    const listIbadah = ibadah.data?.map(ibadah => {
-        return ibadah[ibadah.length - 1];
-    })
-
-    console.log(listIbadah);
-
     
     if(error) {
         return <div>An error occured: {error.message}</div>
