@@ -5,6 +5,7 @@ import {
     Flex,
     HStack,
     Image,
+    Link,
     Spacer,
     useColorModeValue,
   } from '@chakra-ui/react'
@@ -23,7 +24,9 @@ import {
               </Box>
               <Spacer />
               <Box>
-                <Button colorScheme='facebook' size={'lg'}>Contact Person</Button>
+                <Link href='https://wa.me/6287750363064?text=Halo%20bolehkah%20saya%20meminta%20jadwal%20ibadah%20atau%20warta'>
+                  <Button colorScheme='facebook' size={'lg'}>Contact Person</Button>
+                </Link>
               </Box>
             </Flex>
           </Container>
