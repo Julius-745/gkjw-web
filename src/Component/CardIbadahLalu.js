@@ -1,9 +1,7 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
-import { Container, HStack, Stack} from "@chakra-ui/react";
-import { CardIbadah } from "./CardIbadah";
+import { Container, HStack} from "@chakra-ui/react";
 import { CardLalu } from "./CardLalu";
-import { CardKrw } from "./CardKrw";
 import { CardSkeleton } from "./CardSkeleton";
 
 export const CardIbadahLalu = () => {
@@ -12,7 +10,7 @@ export const CardIbadahLalu = () => {
 
     useEffect(() => {
         axios
-            .get("https://gkjwprob.domcloud.io/api/ibadahs/")
+            .get("https://gkjwprob.domcloud.io/api/ibadahs?sort[0]=date%3Adesc&pagination[start]=0&pagination[limit]=3")
             .then(res => setIbadah(res.data))
             .catch(err => setError(err.message));
     } , []);
@@ -42,17 +40,6 @@ export const CardIbadahLalu = () => {
                 </Container>
                 )
             })}
-            <Container border={'1px'} borderColor={'gray.200'} padding={5} borderRadius={4} w={'calc(100% / 3)'}>
-            <CardLalu 
-                title={'Jadwal Ibadah Minggu'} 
-                date={'17 April 2022'}
-                persons1={'50'}
-                persons2={'50'}
-                fund={10000000}
-                fund1={10000000}
-                fund2={10000000}
-                />
-            </Container>
         </HStack>
     )
 }
