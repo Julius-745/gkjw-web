@@ -8,6 +8,7 @@ const ImageSlider = ({ slides }) => {
     <Carousel showArrows={true} showThumbs={false} infiniteLoop>
       {slides.data?.map((slide) => {
         return (
+          <Link href="/Detail">
           <Flex justifyContent={'center'} alignItems={'center'} onClick={''}>
             <Box
             height={388} 
@@ -22,6 +23,7 @@ const ImageSlider = ({ slides }) => {
               <Text color={'black'} paddingTop={5}>{`${slide.attributes.content.substring(0, MAX_LENGTH)}...`}</Text>
             </Flex>
           </Flex>
+          </Link>
         )
       })}
     </Carousel>

@@ -19,13 +19,12 @@ export const Carousel = () => {
   }
 
   return (
-    <Box
-    w="100%"
-    p={16}
-    color="white"
-    >
-      <ImageSlider slides={articles} />
-    </Box>
+      <Box
+      w="100%"
+      p={16}
+      color="white">
+        <ImageSlider slides={articles} />
+      </Box>
   )
 }
 

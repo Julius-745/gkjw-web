@@ -1,38 +1,14 @@
-import React from 'react';
-import {
-  ChakraProvider,
-  Box,
-  Image,
-  Text,
-  Link,
-  VStack,
-  Code,
-  Grid,
-  Stack,
-  Container,
-} from '@chakra-ui/react';
-import { Banner }  from './Component/Banner';
-import { Header } from './Component/Header';
-import { Footer } from './Component/Footer';
-import { CardSection } from './Component/CardSection';
-import { Carousel } from './Component/Carousel';
-import { CardJadwalSection } from './Component/CardJadwalSection';
-import { CardIbadahLalu } from './Component/CardIbadahLalu';
-import { CardSkeleton } from "./Component/CardSkeleton";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./Screens/Home";
+import Detail from "./Screens/Detail";
 
-function App() {
+export default function App() {
   return (
-    <ChakraProvider>
-      <Box>
-        <Header />
-        <Banner/>
-        <CardJadwalSection />
-        <Carousel />
-        <CardIbadahLalu/>
-        <Footer />
-      </Box>
-    </ChakraProvider>
-  );
+    <BrowserRouter>
+      <Routes>
+        <Route index element={<Home/>}></Route>
+        <Route path="Detail" element={<Detail/>}></Route>
+      </Routes>
+    </BrowserRouter>
+  )
 }
-
-export default App;
