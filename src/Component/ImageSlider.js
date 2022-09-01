@@ -1,14 +1,15 @@
 import { Image,Box, Text, Flex, Link } from "@chakra-ui/react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import Detail from "../Screens/Detail";
 
-const ImageSlider = ({ slides }) => {
+const ImageSlider = ({slides}) => {
   const MAX_LENGTH = 250;
   return (
     <Carousel showArrows={true} showThumbs={false} infiniteLoop>
       {slides.data?.map((slide) => {
         return (
-          <Link href="/Detail">
+          <Link href={`Detail/${slide.id}`}>
           <Flex justifyContent={'center'} alignItems={'center'} onClick={''}>
             <Box
             height={388} 

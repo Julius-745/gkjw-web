@@ -9,15 +9,18 @@ import {
   } from '@chakra-ui/react'
   import React, {useState, useEffect} from 'react'
   import axios from 'axios';
+  import {useParams} from 'react-router-dom';
   import Photo  from './Majelis.svg';
 
   export const Article = () => {
     const[error, setError] = useState(null);
     const[article, setArticle] = useState([]);
 
+    const {id} = useParams();
+
     useEffect(() => {
         axios
-            .get("https://gkjwprob.domcloud.io/api/articles/1?populate=*")
+            .get(`https://gkjwprob.domcloud.io/api/articles/${id}?populate=*`)
             .then(res => setArticle(res.data.data.attributes))
             .catch(err => setError(err.message));
     } , []);

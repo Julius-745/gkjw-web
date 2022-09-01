@@ -5,7 +5,7 @@ import axios from "axios";
 
 export const Carousel = () => {
   const[error, setError] = useState(null);
-  const[articles, setArticles] = useState([]);
+  const[articles, setArticles] = useState({});
 
   useEffect(() => {
       axios
@@ -23,7 +23,7 @@ export const Carousel = () => {
       w="100%"
       p={16}
       color="white">
-        <ImageSlider slides={articles} />
+        <ImageSlider slides={articles}/>
       </Box>
   )
 }
