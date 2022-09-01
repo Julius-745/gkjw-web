@@ -28,12 +28,16 @@ import {
     if(error) {
         return <div>An error occured: {error.message}</div>
     }
+
+    const date = (article.createdAt)
     
+    var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+
     return(
             <Flex paddingTop={10} paddingLeft={16} paddingBottom={10} flexDirection={'column'}>
             <Box h={'81px'} textAlign={'center'}>
                 <Text fontSize={'4xl'} fontWeight={'bold'}>{article.category}</Text>
-                <Text fontSize={'xl'}>{article.createdAt}</Text>
+                <Text fontSize={'xl'}>{new Date(date).toLocaleDateString("id-ID", options)}</Text>
             </Box>
             <Box textAlign={'left'} paddingTop={20}>
                 <Text fontSize={'3xl'} fontWeight={'bold'}>{article.title}</Text>
