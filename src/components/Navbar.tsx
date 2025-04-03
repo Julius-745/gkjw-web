@@ -1,5 +1,6 @@
 import { INavigation } from "@/types/INavigation";
 import { Button } from "@/components/ui/button";
+import { Menu } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
 import { Link } from "react-router";
@@ -10,16 +11,16 @@ interface INavbar {
 }
 
 const MenuList: React.FC<INavbar> = ({ data }) => {
-  return (
-    <nav className="flex space-x-6">
-      {data.map((item, idx) => (
-        <Link key={idx} to={`${item.link}`} className="text-md font-medium hover:underline text-white">
-          {item.name}
-        </Link>
-      ))}
-    </nav>
-  );
-};
+    return (
+      <nav className="flex flex-col space-y-4 p-10 lg:flex-row lg:space-x-6 lg:space-y-0 lg:p-0">
+        {data.map((item, idx) => (
+          <Link key={idx} to={`${item.link}`} className="text-md font-medium hover:underline text-black lg:text-white base:hover:bg-gray-500/50">
+            {item.name}
+          </Link>
+        ))}
+      </nav>
+    );
+  };
 
 const Navbar: React.FC<INavbar> = ({ data }) => {
 
@@ -39,7 +40,7 @@ const Navbar: React.FC<INavbar> = ({ data }) => {
 
         <Sheet>
           <SheetTrigger className="lg:hidden">
-            <Button variant="outline">Menu</Button>
+            <Menu color="white"/>
           </SheetTrigger>
           <SheetContent>
             <MenuList data={data} />
