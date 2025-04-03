@@ -3,37 +3,37 @@ import { INavigation } from "@/types/INavigation";
 export const Navigation: Array<INavigation> = [
     {
       name: "Home",
-      link: "#Pasang",
+      link: "#Header",
     },
     {
       name: "Warta",
-      link: "#Tentang",
+      link: "#Warta",
     },
     {
-      name: "Radio",
-      link: "#Aduan",
+        name: "Radio",
+        link: "https://radiogkjwprob.caster.fm/",
     },
     {
       name: "Kontak",
-      link: "#Aduan",
+      link: "#Kontak",
     },
   ];
   
   export const FooterNav: Array<INavigation> = [
     {
         name: "Home",
-        link: "#Pasang",
+        link: "#Header",
       },
       {
         name: "Warta",
-        link: "#Tentang",
+        link: "#Warta",
       },
       {
         name: "Radio",
-        link: "#Aduan",
+        link: "https://radiogkjwprob.caster.fm/",
       },
       {
         name: "Kontak",
-        link: "#Aduan",
+        link: "#Kontak",
       },
   ]
