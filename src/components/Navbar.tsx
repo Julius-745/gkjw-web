@@ -1,5 +1,4 @@
 import { INavigation } from "@/types/INavigation";
-import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
