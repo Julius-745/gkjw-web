@@ -29,17 +29,17 @@ const Banner: React.FC<BannerSectionProps> = ({
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-black/70"></div>
       </div>
       <div className="relative z-10 text-center px-6 md:px-16 max-w-7xl mx-auto">
-        <h3 className={`${getResponsiveHeadingClass(3)} uppercase tracking-wider mb-3 md:mb-4`}>
+        <h3 className={`${getResponsiveHeadingClass(3, false)} uppercase tracking-wider mb-3 md:mb-4`}>
           {subtitle}
         </h3>
         
-        <h1 className={`${getResponsiveHeadingClass(1)} leading-tight mb-4 md:mb-8`}>
+        <h1 className={`${getResponsiveHeadingClass(1, false)} leading-tight mb-4 md:mb-8`}>
           {titleParts[0]}
           <br className="hidden sm:block" />
           {titleParts.length > 1 ? `JEMAAT ${titleParts[1]}` : ''}
         </h1>
         
-        <p className={`${getResponsiveHeadingClass('paragraph')} max-w-3xl mx-auto`}>
+        <p className={`${getResponsiveHeadingClass('paragraph', false)} max-w-3xl mx-auto`}>
           {description}
         </p>
       </div>

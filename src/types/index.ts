@@ -1,3 +1,4 @@
+import React from "react";
 interface INavChild {
     title: string;
     link: string;
@@ -26,4 +27,17 @@ export interface HeroContent {
   subtitle: string;
   description: string;
   backgroundImage: string;
+}
+export interface ContactItems {
+  icon: React.ReactNode; 
+  title: string; 
+  description: string, 
+  link: string;
+}
+
+export interface ContactSectionProps {
+  title?: string;
+  description?: string;
+  contactItems?: ContactItems[];
+  imageUrl?: string;
 }
