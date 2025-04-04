@@ -1,4 +1,4 @@
-import { INavigation } from "@/types/INavigation";
+import { INavigation } from "@/types";
 import { Menu } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
@@ -46,7 +46,6 @@ const Navbar: React.FC<INavbar> = ({ data }) => {
           </SheetContent>
         </Sheet>
       </div>
-      <Separator className="bg-gray-300" />
     </header>
   );
 };
