@@ -1,6 +1,5 @@
 import { INavigation } from "@/types";
 import { Menu } from "lucide-react";
-import { Separator } from "@/components/ui/separator";
 import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
 import { Link } from "react-router";
 import Logo from '../assets/image/gkjw.svg'
