@@ -1,4 +1,4 @@
-import { INavigation } from "@/types/INavigation";
+import { INavigation } from "@/types";
 
 export const Navigation: Array<INavigation> = [
     {
