@@ -41,3 +41,10 @@ export interface ContactSectionProps {
   contactItems?: ContactItems[];
   imageUrl?: string;
 }
+
+export interface ArticleCardProps {
+  imageUrl: string;
+  title: string;
+  source: string;
+  description: string;
+}
