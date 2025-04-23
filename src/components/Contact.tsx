@@ -34,7 +34,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({
               href={item.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-start space-x-4 p-4 rounded-lg hover:bg-gray-100 transition duration-200">
+              className="flex items-start space-x-4 p-4 rounded-lg hover:bg-gray-100 transition duration-200 border border-gray-200">
                 <div key={index} className="flex items-start space-x-4">
                 <div className="text-gray-500 text-xl">{item.icon}</div>
                 <div>
