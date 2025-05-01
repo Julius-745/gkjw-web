@@ -3,7 +3,7 @@ import { useTheme } from "@/theme/themeContext";
 import { ContactSectionProps } from "@/types";
 import { ContactData } from "@/constant/contact";
 
-const ContactSection: React.FC<ContactSectionProps> = ({
+export const ContactSection: React.FC<ContactSectionProps> = ({
   title = "PELAYANAN GKJW",
   description =
     "Untuk informasi mengenai jadwal ibadah dan kegiatan gereja, GKJW Jemaat Probolinggo memiliki beberapa pelayanan yang dapat Anda akses. Kami menyediakan Radio Sate Pari, yang digunakan untuk saat teduh bersama. Selain itu, ada juga Liputan Khusus GKJW, yang berisi informasi terkait agenda dan event di gereja. Untuk pertanyaan lebih lanjut atau jika Anda ingin menitipkan jemaat, Anda dapat menghubungi kami melalui email di gkjwprolingg@gmail.com, telepon di +6285257284172, atau melalui media sosial kami di Instagram, Facebook, dan WhatsApp. Kami siap membantu Anda mendapatkan informasi yang Anda butuhkan.",
@@ -49,5 +49,3 @@ const ContactSection: React.FC<ContactSectionProps> = ({
     </section>
   );
 };
-
-export default ContactSection;
