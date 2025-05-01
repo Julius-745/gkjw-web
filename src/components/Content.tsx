@@ -37,7 +37,7 @@ export const ContentSection: React.FC<ContactSectionProps> = ({
             />
           ))
         ) : (
-          <p className="col-span-full text-center">No content available.</p>
+          <p className="col-span-full text-center">Konten Belum Tersedia</p>
         )}
       </div>
     </section>
