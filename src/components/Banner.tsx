@@ -8,7 +8,7 @@ interface BannerSectionProps {
   backgroundImage?: string;
 }
 
-const Banner: React.FC<BannerSectionProps> = ({ 
+export const Banner: React.FC<BannerSectionProps> = ({ 
   title = "GEREJA KRISTEN JAWI WETAN JEMAAT PROBOLINGGO",
   subtitle = "SELAMAT DATANG WARGA NYAWIJI",
   description = "Menjadi rekan kerja Tuhan dalam mewujudkan kerajaan Allah didunia",
@@ -46,5 +46,3 @@ const Banner: React.FC<BannerSectionProps> = ({
     </section>
   );
 };
-
-export default Banner;

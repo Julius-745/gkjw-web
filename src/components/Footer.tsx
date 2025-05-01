@@ -3,7 +3,7 @@ import { FooterNav } from "@/constant/navigation";
 import Logo from '../assets/image/gkjw.svg'
 import Kmti from '../assets/image/kmti.svg'
 
-const Footer = () => {
+export const Footer = () => {
   return (
     <div className="w-full bg-[#161722] py-20 px-10">
       <div className="flex flex-col md:flex-row justify-between gap-10">
@@ -41,5 +41,3 @@ const Footer = () => {
     </div>
   );
 };
-
-export default Footer;

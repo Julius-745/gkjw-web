@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "./Navbar";
-import Footer from "./Footer";
+import { Footer } from "./Footer";
 import { Navigation } from "@/constant/navigation";
 
 
@@ -8,7 +8,7 @@ interface ILayout {
   children: React.ReactNode;
 }
 
-const Layout: React.FC<ILayout> = ({ children }) => {
+export const Layout: React.FC<ILayout> = ({ children }) => {
 
   return (
     <div className="w-full overflow-auto">
@@ -18,5 +18,3 @@ const Layout: React.FC<ILayout> = ({ children }) => {
     </div>
   );
 };
-
-export default Layout;

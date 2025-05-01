@@ -43,8 +43,18 @@ export interface ContactSectionProps {
 }
 
 export interface ArticleCardProps {
+  createdAt: string;
+  documentId: string;
   imageUrl: string;
   title: string;
   source: string;
   description: string;
+  loading?: boolean;
+  article_category?: {
+    nama_kategori?: string;
+  };
+  onClick?: () => void;
 }
+
+
+

@@ -1,16 +1,15 @@
-import Header from "./components/Banner"
-import ContactSection from "./components/Contact"
-import ContentSection from "./components/Content"
-import Layout from "./components/Layout"
+import { Route, Switch } from "wouter";
+import Home from "./routes/home/home";
+import Article from "./routes/article/article";
 
-function App() {
+
+const App = () => {
   return (
-    <Layout>
-      <Header/>
-      <ContentSection/>
-      <ContactSection/>
-    </Layout>
-  )
-}
+      <Switch>
+        <Route path="/" component={Home} />
+        <Route path="/article/:id" component={Article} />
+      </Switch>
+  );
+};
 
-export default App
+export default App;
