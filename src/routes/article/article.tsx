@@ -12,9 +12,7 @@ import { Skeleton } from '@/components/ui/skeleton';
 const ArticlePage = () => {
   const { id } = useParams();
   const { data, loading } = useFetchData<ArticleCardProps>(`articles/${id}?populate=*`, {} as ArticleCardProps);
-  const { data: recommendArticle, loading: loadingReccomend } = useFetchData<ArticleCardProps[]>(`articles?_limit=3`, []);
-
-  console.log("data", data)
+  const { data: recommendArticle, loading: loadingReccomend } = useFetchData<ArticleCardProps[]>(`articles?_limit=3&filters[documentId][$ne]=${id}`, []);
 
   if (loading || loadingReccomend) {
     return (
@@ -41,7 +39,7 @@ const ArticlePage = () => {
                 <img 
                   src={data?.cover_image}
                   alt="Featured image" 
-                  className="w-full min-h-1/3"
+                  className="w-full"
                 />
                 {data?.article_category?.nama_kategori === 'liputan khusus' 
                   ? null 
