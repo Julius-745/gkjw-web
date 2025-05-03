@@ -19,7 +19,7 @@ export const ContentSection: React.FC<ContactSectionProps> = ({
     <section className="py-16 px-6 md:px-16 max-w-7xl mx-auto">
       <h2 className={`${getResponsiveHeadingClass(2, true)} text-center mb-6`}>{title}</h2>
       <p className="text-center mx-auto mb-12">{description}</p>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-4">
+      <div id="Gkjwupdates" className="grid grid-cols-1 md:grid-cols-2 gap-6 px-4">
         {loading ? (
           Array.from({ length: 4 }).map((_, i) => <ContentCardSkeleton key={i} />)
         ) : data.length > 0 ? (

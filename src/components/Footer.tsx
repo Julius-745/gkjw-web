@@ -4,6 +4,7 @@ import Logo from '../assets/image/gkjw.svg'
 import Kmti from '../assets/image/kmti.svg'
 
 export const Footer = () => {
+
   return (
     <div className="w-full bg-[#161722] py-20 px-10">
       <div className="flex flex-col md:flex-row justify-between gap-10">
@@ -20,7 +21,7 @@ export const Footer = () => {
         
         <div className="flex flex-col gap-8 max-w-lg">
           <h3 className="text-white text-2xl">Kontak</h3>
-          <Link to={'mailto:gkjwprolingg@gmail.com'} style={{cursor: 'pointer'}} target="blank">
+          <Link to="mailto:gkjwprolingg@gmail.com" style={{cursor: 'pointer'}} target="blank">
             <p className="text-white">gkjwprolingg@gmail.com</p>
           </Link>
           <p className="text-white">Jl. Dr Cipto Mangunkusumo 1 Sukabumi Mayangan Kota Probolinggo 68118, Jl. Ahmad Yani No.22, Sukabumi, Mayangan, Probolinggo City, East Java 67219</p>
@@ -32,9 +33,9 @@ export const Footer = () => {
         <div className="flex flex-col gap-5 mt-10 md:mt-0">
           <h3 className="text-white text-2xl">Pelayanan</h3>
           {FooterNav.map((item, idx) => (
-            <Link to={`${item.link}`} key={idx} className="text-white text-lg hover:text-[#FFBFFC]" target="blank">
+            <a href={`${item.link}`} key={idx} className="text-white text-lg hover:text-[#FFBFFC]">
               {item.name}
-            </Link>
+            </a>
           ))}
         </div>
       </div>

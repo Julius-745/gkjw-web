@@ -6,8 +6,8 @@ export const Navigation: Array<INavigation> = [
       link: "#Header",
     },
     {
-      name: "Warta",
-      link: "#Warta",
+      name: "Gkjw Updates",
+      link: "#Gkjwupdates",
     },
     {
         name: "Radio Swara Nyawiji",
@@ -15,7 +15,7 @@ export const Navigation: Array<INavigation> = [
     },
     {
       name: "Kontak",
-      link: "#Kontak",
+      link: "https://wa.me/6285257284172",
     },
   ];
   
@@ -25,8 +25,8 @@ export const Navigation: Array<INavigation> = [
         link: "#Header",
       },
       {
-        name: "Warta",
-        link: "#Warta",
+        name: "Gkjw Updates",
+        link: "#Gkjwupdates",
       },
       {
         name: "Radio",
@@ -34,6 +34,6 @@ export const Navigation: Array<INavigation> = [
       },
       {
         name: "Kontak",
-        link: "#Kontak",
+        link: "https://wa.me/6285257284172",
       },
   ]

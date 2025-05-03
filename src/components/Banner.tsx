@@ -19,7 +19,7 @@ export const Banner: React.FC<BannerSectionProps> = ({
   const titleParts = title.split(' JEMAAT ');
   
   return (
-    <section className="-mt-8 relative w-full h-[70vh] md:h-[80vh] lg:h-screen flex items-center justify-center overflow-hidden">
+    <section id="Header" className="-mt-8 relative w-full h-[70vh] md:h-[80vh] lg:h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
         <img 
           src={backgroundImage} 
