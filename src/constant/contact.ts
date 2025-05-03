@@ -19,7 +19,7 @@ export const ContactData: Array<ContactItems> = [
         icon: React.createElement(Tag),
         title: "Journal Gallery",
         description: "Akses liputan khusus gereja yang menampilkan acara gereja dengan desain modern melalui Instagram.",
-        link: "https://www.instagram.com/gkjwprolinggo/"
+        link: "https://www.instagram.com/gkjwprobolinggo?igsh=cGltZ2hyZ3N4ZGQ3"
     },
     { 
         icon: React.createElement(Tag),
