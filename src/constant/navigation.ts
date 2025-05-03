@@ -10,7 +10,7 @@ export const Navigation: Array<INavigation> = [
       link: "#Warta",
     },
     {
-        name: "Radio",
+        name: "Radio Swara Nyawiji",
         link: "https://radiogkjwprob.caster.fm/",
     },
     {
