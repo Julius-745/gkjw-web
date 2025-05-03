@@ -31,7 +31,7 @@ export const ContentSection: React.FC<ContactSectionProps> = ({
               title={article.title}
               description={article.description}
               source={article.title}
-              imageUrl="https://ik.imagekit.io/uavheojaq/GKJW/DummyArticle.png?updatedAt=1743824255700"
+              imageUrl={article.cover_image || "https://dummyimage.com/300"}
               loading={false}
               onClick={() => navigate(`article/${article.documentId}`)}
             />
