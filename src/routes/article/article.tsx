@@ -9,12 +9,17 @@ import { useParams } from 'wouter';
 import { formatFullDate } from '@/lib/date';
 import { Skeleton } from '@/components/ui/skeleton';
 import { useLocation } from 'wouter';
+import { useEffect } from 'react';
 
 const ArticlePage = () => {
   const [, navigate] = useLocation();
   const { id } = useParams();
   const { data, loading } = useFetchData<ArticleCardProps>(`articles/${id}?populate=*`, {} as ArticleCardProps);
   const { data: recommendArticle, loading: loadingReccomend } = useFetchData<ArticleCardProps[]>(`articles?_limit=3&filters[documentId][$ne]=${id}`, []);
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   if (loading || loadingReccomend) {
     return (
@@ -38,12 +43,7 @@ const ArticlePage = () => {
           <div className="flex flex-col lg:flex-row gap-8">
             <main className="w-full lg:w-2/3 my-10">
               <Card className="overflow-hidden">
-                <img 
-                  src={data?.cover_image}
-                  alt="Featured image" 
-                  className="w-full"
-                />
-                {data?.article_category?.nama_kategori === 'liputan khusus' 
+              {data?.article_category?.nama_kategori === 'liputan khusus' 
                   ? null 
                   : <CardContent className="p-8">
                     <Badge variant="secondary" className="bg-blue-50 text-blue-700 hover:bg-blue-100 mb-4">
@@ -69,6 +69,11 @@ const ArticlePage = () => {
                     </div>
                     </CardContent>
                 }
+                <img 
+                  src={data?.cover_image}
+                  alt="Featured image" 
+                  className="w-full"
+                />
               </Card>
             </main>
 
