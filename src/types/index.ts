@@ -50,6 +50,7 @@ export interface ArticleCardProps {
   source: string;
   description: string;
   loading?: boolean;
+  cover_image?: string;
   article_category?: {
     nama_kategori?: string;
   };
