@@ -8,8 +8,10 @@ import { ArticleCardProps } from '@/types';
 import { useParams } from 'wouter';
 import { formatFullDate } from '@/lib/date';
 import { Skeleton } from '@/components/ui/skeleton';
+import { useLocation } from 'wouter';
 
 const ArticlePage = () => {
+  const [, navigate] = useLocation();
   const { id } = useParams();
   const { data, loading } = useFetchData<ArticleCardProps>(`articles/${id}?populate=*`, {} as ArticleCardProps);
   const { data: recommendArticle, loading: loadingReccomend } = useFetchData<ArticleCardProps[]>(`articles?_limit=3&filters[documentId][$ne]=${id}`, []);
@@ -79,7 +81,7 @@ const ArticlePage = () => {
                   <ScrollArea className="h-auto">
                     <ul className="space-y-4">
                       {recommendArticle.map((post, index) => (
-                        <li key={index} className="flex items-center">
+                        <li key={index} className="flex items-center cursor-pointer" onClick={() => navigate(`${post.documentId}`)}>
                           <img 
                             src={post.cover_image || "https://dummyimage.com/300"} 
                             alt="Post thumbnail" 
