@@ -1,7 +1,6 @@
 import { INavigation } from "@/types";
 import { Menu } from "lucide-react";
 import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
-import { Link } from "react-router";
 import Logo from '../assets/image/gkjw.svg'
 
 interface INavbar {
@@ -12,9 +11,9 @@ const MenuList: React.FC<INavbar> = ({ data }) => {
     return (
       <nav className="flex flex-col space-y-4 p-10 lg:flex-row lg:space-x-6 lg:space-y-0 lg:p-0">
         {data.map((item, idx) => (
-          <Link key={idx} to={`${item.link}`} className="text-md font-medium hover:underline text-black lg:text-white base:hover:bg-gray-500/50">
+          <a key={idx} href={`${item.link}`} className="text-md font-medium hover:underline text-black lg:text-white base:hover:bg-gray-500/50">
             {item.name}
-          </Link>
+          </a>
         ))}
       </nav>
     );
@@ -26,9 +25,9 @@ const Navbar: React.FC<INavbar> = ({ data }) => {
     <header className="fixed top-0 w-full bg-[#161722] shadow-md z-50">
       <div className="container mx-auto px-6 flex items-center justify-between py-4">
         <div className="flex items-center space-x-4">
-          <Link to="/">
+          <a href={"/"}>
             <img src={Logo} alt="Logo" width={40} height={40} className="invert"/>
-          </Link>
+          </a>
           <span className="text-lg font-bold text-white">GKJW Jemaat Probolinggo</span>
         </div>
 

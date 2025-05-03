@@ -2,12 +2,6 @@ import { ContactItems } from "@/types";
 import { Tag } from "lucide-react";
 import React from "react";
 
-/**
- * Bagian ini akan memandu Anda untuk menghubungi GKJW, 
- * baik untuk menanyakan informasi terkait "warga titipan" 
- * maupun jadwal ibadah gereja. Silakan pilih salah satu 
- * kontak di bawah ini untuk mendapatkan informasi lebih lanjut.
- */
 export const ContactData: Array<ContactItems> = [
     {
         icon: React.createElement(Tag),
