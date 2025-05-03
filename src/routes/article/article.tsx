@@ -83,7 +83,7 @@ const ArticlePage = () => {
                       {recommendArticle.map((post, index) => (
                         <li key={index} className="flex items-center">
                           <img 
-                            src={post.cover_image} 
+                            src={post.cover_image || "https://dummyimage.com/300"} 
                             alt="Post thumbnail" 
                             className="w-16 h-16 rounded object-cover mr-3"
                           />
