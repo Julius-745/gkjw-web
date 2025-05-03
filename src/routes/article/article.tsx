@@ -14,6 +14,8 @@ const ArticlePage = () => {
   const { data, loading } = useFetchData<ArticleCardProps>(`articles/${id}?populate=*`, {} as ArticleCardProps);
   const { data: recommendArticle, loading: loadingReccomend } = useFetchData<ArticleCardProps[]>(`articles?_limit=3`, []);
 
+  console.log("data", data)
+
   if (loading || loadingReccomend) {
     return (
       <Layout>
@@ -34,40 +36,43 @@ const ArticlePage = () => {
       <div className="min-h-screen bg-slate-50">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row gap-8">
-            <main className="w-full lg:w-2/3">
+            <main className="w-full lg:w-2/3 my-10">
               <Card className="overflow-hidden">
                 <img 
-                  src="https://ik.imagekit.io/uavheojaq/GKJW/DummyArticle.png?updatedAt=1743824255700" 
+                  src={data?.cover_image}
                   alt="Featured image" 
                   className="w-full min-h-1/3"
                 />
-                <CardContent className="p-8">
-                  <Badge variant="secondary" className="bg-blue-50 text-blue-700 hover:bg-blue-100 mb-4">
-                    {data?.article_category?.nama_kategori}
-                  </Badge>
-                  <h1 className="text-3xl font-bold text-slate-900 mb-4 leading-tight">
-                    {data?.title}
-                  </h1>
-                  <div className="flex items-center mb-6">
-                    <Avatar className="mr-3 h-10 w-10">
-                      <AvatarImage src="/api/placeholder/40/40" alt="Author" />
-                      <AvatarFallback>JS</AvatarFallback>
-                    </Avatar>
-                    <div className="text-sm text-slate-500">
-                      <span className="text-slate-800 font-semibold block">Jane Smith</span>
-                      <span>{formatFullDate(data?.createdAt)} • 5 min read</span>
+                {data?.article_category?.nama_kategori === 'liputan khusus' 
+                  ? null 
+                  : <CardContent className="p-8">
+                    <Badge variant="secondary" className="bg-blue-50 text-blue-700 hover:bg-blue-100 mb-4">
+                      {data?.article_category?.nama_kategori}
+                    </Badge>
+                    <h1 className="text-3xl font-bold text-slate-900 mb-4 leading-tight">
+                      {data?.title}
+                    </h1>
+                    <div className="flex items-center mb-6">
+                      <Avatar className="mr-3 h-10 w-10">
+                        <AvatarImage src="/api/placeholder/40/40" alt="Author" />
+                        <AvatarFallback>JS</AvatarFallback>
+                      </Avatar>
+                      <div className="text-sm text-slate-500">
+                        <span className="text-slate-800 font-semibold block">Jane Smith</span>
+                        <span>{formatFullDate(data?.createdAt)} • 5 min read</span>
+                      </div>
                     </div>
-                  </div>
-                  <div className="prose prose-slate mb-6">
-                    <p className="text-lg mb-4 text-slate-700">
-                      {data.description}
-                    </p>
-                  </div>
-                </CardContent>
+                    <div className="prose prose-slate mb-6">
+                      <p className="text-lg mb-4 text-slate-700">
+                        {data.description}
+                      </p>
+                    </div>
+                    </CardContent>
+                }
               </Card>
             </main>
 
-            <aside className="w-full lg:w-1/3">
+            <aside className="w-full lg:w-1/3 my-10">
               <Card className="mb-6">
                 <CardContent className="p-6">
                   <h3 className="text-lg font-semibold text-slate-900 pb-3 mb-4 border-b border-slate-100">
@@ -78,7 +83,7 @@ const ArticlePage = () => {
                       {recommendArticle.map((post, index) => (
                         <li key={index} className="flex items-center">
                           <img 
-                            src={`/api/placeholder/70/70`} 
+                            src={post.cover_image} 
                             alt="Post thumbnail" 
                             className="w-16 h-16 rounded object-cover mr-3"
                           />
