@@ -2,14 +2,17 @@ import {
     Banner, 
     Layout, 
     ContentSection, 
-    ContactSection 
+    ContactSection,
+    WartaSection
 } from "@/components"
+
 
 function Home() {
   return (
     <Layout>
       <Banner/>
       <ContentSection/>
+      <WartaSection/>
       <ContactSection/>
     </Layout>
   )

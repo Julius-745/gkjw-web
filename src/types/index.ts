@@ -57,5 +57,10 @@ export interface ArticleCardProps {
   onClick?: () => void;
 }
 
-
+export interface WartaProps {
+  createdAt: string;
+  tanggal: string;
+  nomor_edisi: string;
+  onClick: () => void;
+}
 
