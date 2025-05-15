@@ -6,7 +6,6 @@ import { formatFullDate } from "@/lib/date";
 const ContentCard: React.FC<ArticleCardProps> = ({ imageUrl, title, article_category, description, createdAt, onClick }) => {
 
   return (
-    
     <Card className="w-full shadow-md rounded-xl overflow-hidden cursor-pointer hover:shadow-lg transition-shadow duration-300" onClick={onClick}>
       <CardContent className="flex space-x-4 p-4">
         <img src={imageUrl} alt={title} className="w-28 h-28 object-cover rounded-lg" />
