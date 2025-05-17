@@ -23,7 +23,7 @@ export const WartaSection: React.FC<ContactSectionProps> = ({
           Array.from({ length: 4 }).map((_, i) => <ContentCardSkeleton key={i} />)
         ) : data.length > 0 ? (
           data.map((data: any, idx: number) => (
-            <WartaCard key={idx} createdAt={data.createdAt} tanggal={data.tanggal} onClick={() => navigate(`warta/${data.documentId}`)} nomor_edisi={data.nomor_edisi}/>
+            <WartaCard key={idx} createdAt={data.createdAt} tanggal={data.tanggal} onClick={() => navigate(data.nomor_edisi)} nomor_edisi={data.nomor_edisi}/>
           ))
         ) : (
           <p className="col-span-full text-center">Warta Belum Tersedia</p>
